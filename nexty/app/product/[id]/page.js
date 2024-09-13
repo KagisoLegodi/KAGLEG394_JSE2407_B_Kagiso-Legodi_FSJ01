@@ -71,7 +71,7 @@ const ProductDetailPage = ({ params }) => {
     <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8 dark:text-gray-200">
       {/* Back to Products */}
       <Link href="/" className="text-blue-600 hover:text-blue-800 underline">
-        &larr; Back to Products
+        &larr; Back
       </Link>
 
       {/* Main Content */}
@@ -86,7 +86,7 @@ const ProductDetailPage = ({ params }) => {
             className="object-contain rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300 bg-gray-600"
             priority
           />
-          <h1 className="text-3xl font-bold mt-6 dark:text-white">
+          <h1 className="text-3xl font-bold mt-6 dark:text-white underline">
             {product.title}
           </h1>
         </div>
@@ -105,7 +105,7 @@ const ProductDetailPage = ({ params }) => {
                   alt={`Product image ${index + 1}`}
                   width={96}
                   height={96}
-                  className="object-contain hover:opacity-75 transition-opacity duration-300"
+                  className="object-contain hover:opacity-75 transition-opacity duration-300 bg-gray-300"
                 />
               </div>
             ))}
