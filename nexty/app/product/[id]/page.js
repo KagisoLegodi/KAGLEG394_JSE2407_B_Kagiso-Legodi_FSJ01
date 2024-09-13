@@ -22,4 +22,18 @@ const ProductDetailPage = ({ params }) => {
     const [product, setProduct] = useState(null);
     const [mainImage, setMainImage] = useState("");
     const [error, setError] = useState(null);
-  
+
+    useEffect(() => {
+        const fetchProduct = async () => {
+          try {
+            const productData = await getProduct(productId);
+            setProduct(productData);
+            setMainImage(productData.thumbnail); // Set the initial main image
+          } catch (err) {
+            setError("Failed to fetch product data.");
+          }
+        };
+      
+        fetchProduct();
+      }, [productId]);
+      
