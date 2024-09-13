@@ -83,7 +83,7 @@ const ProductDetailPage = ({ params }) => {
             alt={product.title}
             width={480}
             height={480}
-            className="object-contain rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300"
+            className="object-contain rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300 bg-gray-600"
             priority
           />
           <h1 className="text-3xl font-bold mt-6 dark:text-white">
