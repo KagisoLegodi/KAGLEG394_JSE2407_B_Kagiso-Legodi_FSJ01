@@ -12,6 +12,7 @@ export default function Header() {
           Nexty E-Commerce
         </Link>
 
+        {/* Wishlist Link */}
         <Link
           href="/wishlist"
           className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
@@ -20,6 +21,7 @@ export default function Header() {
           <span>Wishlist</span>
         </Link>
 
+        {/* Cart Link */}
         <Link
           href="/cart"
           className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
@@ -28,6 +30,7 @@ export default function Header() {
           <span>Cart</span>
         </Link>
 
+        {/* Login Link */}
         <Link
           href="/login"
           className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
@@ -35,7 +38,6 @@ export default function Header() {
           <FaUser className="text-lg" />
           <span>Login</span>
         </Link>
-        
       </nav>
     </header>
   );
