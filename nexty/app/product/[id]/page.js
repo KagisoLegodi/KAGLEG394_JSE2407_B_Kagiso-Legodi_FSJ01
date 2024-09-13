@@ -122,3 +122,33 @@ const ProductDetailPage = ({ params }) => {
     </div>
   </div>
 </div>
+
+{/* Reviews Section */}
+<div className="space-y-4 mt-8">
+  <h2 className="text-xl font-bold">Customer Reviews</h2>
+  <p className="text-lg text-yellow-500">Rating: {product.rating}/5</p>
+  {product.reviews && product.reviews.length > 0 ? (
+    <ul className="space-y-6">
+      {product.reviews.map((review, index) => (
+        <li
+          key={index}
+          className="border-b border-gray-200 pb-6 dark:border-gray-700"
+        >
+          <p className="font-semibold text-lg">{review.reviewerName}</p>
+          <p className="text-sm text-gray-500 dark:text-gray-400">
+            {new Date(review.date).toLocaleDateString()}
+          </p>
+          <p className="mt-2 text-gray-800 dark:text-gray-300">
+            {review.comment}
+          </p>
+          <p className="text-yellow-400 mt-1">
+            Rating: {review.rating}/5
+          </p>
+        </li>
+      ))}
+    </ul>
+  ) : (
+    <p className="text-gray-600 dark:text-gray-400">No reviews yet.</p>
+  )}
+</div>
+
