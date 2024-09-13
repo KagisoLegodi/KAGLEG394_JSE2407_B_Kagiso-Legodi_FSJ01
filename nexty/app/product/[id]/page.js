@@ -65,4 +65,23 @@ const ProductDetailPage = ({ params }) => {
                 {product.title}
               </h1>
             </div>
-      
+      {/* Image Gallery */}
+{product.images && product.images.length > 0 && (
+    <div className="mt-6 flex space-x-4 overflow-x-auto">
+      {product.images.map((img, index) => (
+        <div
+          key={index}
+          className="w-24 h-24 cursor-pointer rounded-lg overflow-hidden"
+          onClick={() => setMainImage(img)}
+        >
+          <Image
+            src={img}
+            alt={`Product image ${index + 1}`}
+            width={96}
+            height={96}
+            className="object-contain hover:opacity-75 transition-opacity duration-300"
+          />
+        </div>
+      ))}
+    </div>
+  )}
