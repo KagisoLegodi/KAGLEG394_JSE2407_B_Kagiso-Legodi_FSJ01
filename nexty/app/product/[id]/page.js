@@ -36,4 +36,10 @@ const ProductDetailPage = ({ params }) => {
       
         fetchProduct();
       }, [productId]);
+      if (error) {
+        return <p className="text-red-500 text-center mt-4">{error}</p>;
+      }
+      if (!product) {
+        return <p className="text-gray-500 text-center mt-4">Product not found.</p>;
+      }
       
