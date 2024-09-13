@@ -21,9 +21,9 @@ NEXTY is a modern, responsive e-commerce web application built with Next.js. It 
 - Responsive design for various device sizes
 - Product listing with pagination
 - Detailed product pages with image galleries
-- Shopping cart functionality
-- User authentication (Login)
-- Wishlist for saving favorite items
+- Shopping cart functionality 404
+- User authentication (Login) 404
+- Wishlist for saving favorite items 404
 - Dark mode support
 
 ## Technologies Used
@@ -91,17 +91,17 @@ The project is structured as follows:
 ### Using the Shopping Cart
 
 - Click the "Add to cart" button on a product card or product detail page to add items to your cart.
-- Access your cart by clicking the cart icon in the header.
+- Access your cart by clicking the cart icon in the header. 404
 
 ### Managing Wishlist
 
 - Click the heart icon on a product card to add it to your wishlist.
-- Access your wishlist by clicking the "Wishlist" link in the header.
+- Access your wishlist by clicking the "Wishlist" link in the header. 404
 
 ### User Authentication
 
 - Click the "Login" link in the header to access the login page.
-- (Note: Implement user authentication functionality as needed)
+- (Note: Implement user authentication functionality as needed) 404
 
 ## API Integration
 
