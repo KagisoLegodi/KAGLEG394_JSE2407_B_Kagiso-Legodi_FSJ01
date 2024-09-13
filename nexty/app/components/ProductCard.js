@@ -17,4 +17,33 @@ export default function ProductCard({ product }) {
         (prevIndex - 1 + product.images.length) % product.images.length
     );
   };
+
+  return (
+    <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300 dark:bg-gray-800 dark:border-gray-700">
+      <div className="relative">
+        <Image
+          src={product.images[currentImageIndex]}
+          alt={product.title}
+          width={320}
+          height={320}
+          className="rounded-t-lg object-contain w-full h-64"
+        />
+        {product.images.length > 1 && (
+          <>
+            <button
+              onClick={prevImage}
+              className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-r"
+            >
+              &lt;
+            </button>
+            <button
+              onClick={nextImage}
+              className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-l"
+            >
+              &gt;
+            </button>
+          </>
+        )}
+      </div>
+  
 }
