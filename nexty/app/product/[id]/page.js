@@ -15,3 +15,11 @@ async function getProduct(productId) {
 
   return res.json();
 }
+
+const ProductDetailPage = ({ params }) => {
+    const { id: productId } = params;
+  
+    const [product, setProduct] = useState(null);
+    const [mainImage, setMainImage] = useState("");
+    const [error, setError] = useState(null);
+  
