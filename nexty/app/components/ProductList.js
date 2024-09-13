@@ -19,6 +19,12 @@ export default function ProductList({ product }) {
         <p className="text-gray-700">{product.category}</p>
         <p className="text-blue-500 font-semibold">${product.price}</p>
       </div>
+      <div className="flex items-center mt-2">
+        <span className="text-yellow-400 mr-1">★</span>
+        <span className="text-gray-600 text-sm">
+          {product.rating.toFixed(1)}
+        </span>
+      </div>
     </Link>
   );
 }
