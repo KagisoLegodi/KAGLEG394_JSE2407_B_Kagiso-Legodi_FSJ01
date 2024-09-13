@@ -85,3 +85,40 @@ const ProductDetailPage = ({ params }) => {
       ))}
     </div>
   )}
+{/* Product Details */}
+<div className="space-y-6">
+  {/* Price and Category */}
+  <div className="flex items-center justify-between">
+    <p className="text-4xl font-semibold text-green-500">
+      ${product.price.toFixed(2)}
+    </p>
+    <span className="bg-blue-100 text-blue-700 px-3 py-1 rounded-lg">
+      {product.category}
+    </span>
+  </div>
+
+  {/* Description */}
+  <p className="text-lg leading-relaxed">{product.description}</p>
+
+  {/* Discount and Stock */}
+  <div className="grid grid-cols-2 gap-4">
+    <div>
+      <span className="font-semibold">Discount: </span>
+      <span className="text-red-500">
+        {product.discountPercentage}%
+      </span>
+    </div>
+    <div>
+      <span className="font-semibold">Stock: </span>
+      <span>{product.stock} items available</span>
+    </div>
+    <div>
+      <span className="font-semibold">SKU: </span>
+      {product.sku}
+    </div>
+    <div>
+      <span className="font-semibold">Tags: </span>
+      {product.tags.join(", ")}
+    </div>
+  </div>
+</div>
