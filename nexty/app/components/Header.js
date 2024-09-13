@@ -11,6 +11,14 @@ export default function Header() {
         >
           Nexty E-Commerce
         </Link>
+
+        <Link
+          href="/wishlist"
+          className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
+        >
+          <FaHeart className="text-lg" />
+          <span>Wishlist</span>
+        </Link>
       </nav>
     </header>
   );
