@@ -42,4 +42,27 @@ const ProductDetailPage = ({ params }) => {
       if (!product) {
         return <p className="text-gray-500 text-center mt-4">Product not found.</p>;
       }
+      return (
+        <div className="container mx-auto px-4 sm:px-6 lg:px-8 mt-8 space-y-8 dark:text-gray-200">
+          {/* Back to Products */}
+          <Link href="/" className="text-blue-600 hover:text-blue-800 underline">
+            &larr; Back to Products
+          </Link>
+      
+          {/* Main Content */}
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-10">
+            {/* Main Image */}
+            <div className="flex flex-col items-center">
+              <Image
+                src={mainImage}
+                alt={product.title}
+                width={480}
+                height={480}
+                className="object-contain rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300"
+                priority
+              />
+              <h1 className="text-3xl font-bold mt-6 dark:text-white">
+                {product.title}
+              </h1>
+            </div>
       
