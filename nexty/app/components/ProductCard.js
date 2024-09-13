@@ -45,5 +45,14 @@ export default function ProductCard({ product }) {
           </>
         )}
       </div>
-  
+      <div className="px-5 pb-5">
+  <Link href={`/product/${product.id}`}>
+    <h5 className="text-lg font-bold tracking-tight text-gray-900 dark:text-white truncate">
+      {product.title}
+    </h5>
+  </Link>
+  <p className="text-sm text-gray-700 dark:text-gray-300 mt-2">
+    {product.description}
+  </p>
+
 }
