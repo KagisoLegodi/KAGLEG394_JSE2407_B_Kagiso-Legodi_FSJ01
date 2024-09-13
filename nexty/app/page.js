@@ -38,6 +38,7 @@ export default function Home() {
 
   useEffect(() => {
     fetchProducts(page);
+    window.scrollTo(0, 0); // Scroll to top on page load
   }, [page]);
 
   const handlePageChange = (direction) => {

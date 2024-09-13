@@ -39,6 +39,7 @@ const ProductDetailPage = ({ params }) => {
     };
 
     fetchProduct();
+    window.scrollTo(0, 0); // Scroll to top when product is fetched
   }, [productId]);
 
   if (loading) {
