@@ -22,6 +22,7 @@ const ProductDetailPage = ({ params }) => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true); // New state for loading
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -29,13 +30,35 @@ const ProductDetailPage = ({ params }) => {
         const productData = await getProduct(productId);
         setProduct(productData);
         setMainImage(productData.thumbnail); // Set the initial main image
+        setLoading(false); // Set loading to false after data is fetched
       } catch (err) {
         setError("Failed to fetch product data.");
+        setLoading(false); // Set loading to false even if there is an error
       }
     };
 
     fetchProduct();
   }, [productId]);
+
+  if (loading) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <svg
+          className="w-12 h-12 animate-spin text-blue-600"
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        >
+          <circle cx="12" cy="12" r="10" />
+          <path d="M4 12a8 8 0 1 1 16 0A8 8 0 0 1 4 12z" />
+        </svg>
+      </div>
+    );
+  }
 
   if (error) {
     return <p className="text-red-500 text-center mt-4">{error}</p>;
