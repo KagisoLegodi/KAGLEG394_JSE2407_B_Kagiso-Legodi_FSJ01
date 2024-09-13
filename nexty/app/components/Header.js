@@ -27,6 +27,14 @@ export default function Header() {
           <FaShoppingCart className="text-lg" />
           <span>Cart</span>
         </Link>
+
+        <Link
+          href="/login"
+          className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
+        >
+          <FaUser className="text-lg" />
+          <span>Login</span>
+        </Link>
         
       </nav>
     </header>
