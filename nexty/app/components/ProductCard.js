@@ -77,6 +77,13 @@ export default function ProductCard({ product }) {
     {product.rating}
   </span>
 </div>
+<p className="text-sm text-gray-600 dark:text-gray-400">
+  Category: {product.category}
+</p>
+<p className="text-sm text-gray-600 dark:text-gray-400">
+  Stock: {product.stock} available
+</p>
+
 
 
 }
