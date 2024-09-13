@@ -1,4 +1,5 @@
 "use client";
+
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -22,7 +23,7 @@ const ProductDetailPage = ({ params }) => {
   const [product, setProduct] = useState(null);
   const [mainImage, setMainImage] = useState("");
   const [error, setError] = useState(null);
-  const [loading, setLoading] = useState(true); // New state for loading
+  const [loading, setLoading] = useState(true); // State for loading
 
   useEffect(() => {
     const fetchProduct = async () => {
@@ -63,6 +64,7 @@ const ProductDetailPage = ({ params }) => {
   if (error) {
     return <p className="text-red-500 text-center mt-4">{error}</p>;
   }
+
   if (!product) {
     return <p className="text-gray-500 text-center mt-4">Product not found.</p>;
   }
@@ -80,11 +82,14 @@ const ProductDetailPage = ({ params }) => {
         <div className="flex flex-col items-center">
           <Image
             src={mainImage}
-            alt={product.title}
+            alt={`Image of ${product.title}`}
             width={480}
             height={480}
             className="object-contain rounded-xl shadow-lg transition-transform transform hover:scale-105 duration-300 bg-gray-600"
             priority
+            onError={(e) => {
+              e.currentTarget.src = "/path/to/placeholder-image.jpg"; // Fallback image
+            }}
           />
           <h1 className="text-3xl font-bold mt-6 dark:text-white underline">
             {product.title}
@@ -102,10 +107,13 @@ const ProductDetailPage = ({ params }) => {
               >
                 <Image
                   src={img}
-                  alt={`Product image ${index + 1}`}
+                  alt={`Thumbnail image ${index + 1}`}
                   width={96}
                   height={96}
                   className="object-contain hover:opacity-75 transition-opacity duration-300 bg-gray-300"
+                  onError={(e) => {
+                    e.currentTarget.src = "/path/to/placeholder-image.jpg"; // Fallback image
+                  }}
                 />
               </div>
             ))}
