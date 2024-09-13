@@ -26,21 +26,26 @@ export default function ProductCard({ product }) {
       <div className="relative">
         <Image
           src={product.images[currentImageIndex]}
-          alt={product.title}
+          alt={`Image of ${product.title}`}
           width={320}
           height={320}
           className="rounded-t-lg object-contain w-full h-64"
+          onError={(e) => {
+            e.currentTarget.src = "/path/to/placeholder-image.jpg"; // Fallback image
+          }}
         />
         {product.images.length > 1 && (
           <>
             <button
               onClick={prevImage}
+              aria-label="Previous image"
               className="absolute left-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-r"
             >
               &lt;
             </button>
             <button
               onClick={nextImage}
+              aria-label="Next image"
               className="absolute right-0 top-1/2 transform -translate-y-1/2 bg-black bg-opacity-50 text-white p-2 rounded-l"
             >
               &gt;

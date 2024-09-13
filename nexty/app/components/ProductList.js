@@ -9,12 +9,17 @@ export default function ProductList({ product }) {
     >
       <Image
         src={product.thumbnail}
-        alt={product.title}
+        alt={`Thumbnail of ${product.title}`}
         width={320}
         height={320}
         className="object-contain w-full h-48 mb-4"
+        onError={(e) => {
+          e.currentTarget.src = "/path/to/placeholder-image.jpg"; // Fallback image
+        }}
       />
-      <h2 className="text-lg font-bold truncate text-black underline">{product.title}</h2>
+      <h2 className="text-lg font-bold truncate text-black underline">
+        {product.title}
+      </h2>
       <p className="text-gray-700">{product.category}</p>
       <p className="text-green-600 font-semibold">
         ${product.price.toFixed(2)}
