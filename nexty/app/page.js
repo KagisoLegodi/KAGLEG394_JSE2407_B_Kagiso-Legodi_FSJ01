@@ -20,9 +20,9 @@ export default function Home() {
     setError(null);
 
     try {
-      const startId = (page - 1) * itemsPerPage;
+      const skip = (page - 1) * itemsPerPage;
       const res = await fetch(
-        `https://next-ecommerce-api.vercel.app/products?_start=${startId}&_limit=${itemsPerPage}`
+        `https://next-ecommerce-api.vercel.app/products?limit=${itemsPerPage}&skip=${skip}`
       );
       if (!res.ok) throw new Error("Failed to load products");
 
