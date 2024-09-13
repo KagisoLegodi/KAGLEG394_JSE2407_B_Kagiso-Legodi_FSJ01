@@ -19,6 +19,15 @@ export default function Header() {
           <FaHeart className="text-lg" />
           <span>Wishlist</span>
         </Link>
+
+        <Link
+          href="/cart"
+          className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
+        >
+          <FaShoppingCart className="text-lg" />
+          <span>Cart</span>
+        </Link>
+        
       </nav>
     </header>
   );
