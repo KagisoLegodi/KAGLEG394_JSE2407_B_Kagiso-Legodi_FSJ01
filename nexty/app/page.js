@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
+import ProductList from "../components/ProductList"; // Import the ProductList component
 
 export default function Home() {
   const router = useRouter();
@@ -53,13 +54,8 @@ export default function Home() {
 
       {products.length > 0 ? (
         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {/* Replace this comment with actual product rendering logic */}
           {products.map((product) => (
-            <div key={product.id} className="border p-4">
-              <h2>{product.title}</h2>
-              <p>{product.description}</p>
-              <p>${product.price}</p>
-            </div>
+            <ProductList key={product.id} product={product} />
           ))}
         </div>
       ) : (
