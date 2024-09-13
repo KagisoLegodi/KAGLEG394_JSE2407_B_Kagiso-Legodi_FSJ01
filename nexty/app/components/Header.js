@@ -9,35 +9,34 @@ export default function Header() {
           href="/"
           className="text-2xl font-bold text-white hover:text-blue-200 transition duration-300"
         >
-          Nexty E-Commerce
+          Next E-Commerce
         </Link>
-
-        {/* Wishlist Link */}
-        <Link
-          href="/wishlist"
-          className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
-        >
-          <FaHeart className="text-lg" />
-          <span>Wishlist</span>
-        </Link>
-
-        {/* Cart Link */}
-        <Link
-          href="/cart"
-          className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
-        >
-          <FaShoppingCart className="text-lg" />
-          <span>Cart</span>
-        </Link>
-
-        {/* Login Link */}
-        <Link
-          href="/login"
-          className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
-        >
-          <FaUser className="text-lg" />
-          <span>Login</span>
-        </Link>
+        <div className="flex space-x-6 text-white">
+          {/* Wishlist Link */}
+          <Link
+            href="/wishlist"
+            className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
+          >
+            <FaHeart className="text-lg" />
+            <span>Wishlist</span>
+          </Link>
+          {/* Cart Link */}
+          <Link
+            href="/cart"
+            className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
+          >
+            <FaShoppingCart className="text-lg" />
+            <span>Cart</span>
+          </Link>
+          {/* Login Link */}
+          <Link
+            href="/login"
+            className="flex items-center space-x-1 hover:text-blue-200 transition duration-300"
+          >
+            <FaUser className="text-lg" />
+            <span>Login</span>
+          </Link>
+        </div>
       </nav>
     </header>
   );
