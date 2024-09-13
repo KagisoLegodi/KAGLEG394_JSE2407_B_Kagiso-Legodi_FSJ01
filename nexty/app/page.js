@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import ProductList from "../components/ProductList";
+import ProductList from "./components/ProductList";
 
 export default function Home() {
   const router = useRouter();
